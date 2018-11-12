@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:login"
         mc:Ignorable="d"
         Title="Login" Height="680" Width="320" Top="20" Left="500">
-    <Canvas>
+    <Canvas Background="DarkSlateGray">
         <WrapPanel Margin="20,100">
-            <Label Target="{Binding ElementName=txtUser}">_User:</Label>
-            <TextBox Name="txtUser" Width="150" Margin="50,0"></TextBox>
+            <Label Foreground="WhiteSmoke" Target="{Binding ElementName=txtUser}">_User:</Label>
+            <TextBox Foreground="WhiteSmoke" Background="DimGray" Name="txtUser" Width="150" Margin="50,0"></TextBox>
             
         </WrapPanel>
         <WrapPanel Margin="20,150">
-            <Label Target="{Binding ElementName=txtPass}">_Password:</Label>
-            <PasswordBox PasswordChar="*" Name="txtPass" Width="150" Margin="25,0"></PasswordBox>
+            <Label Foreground="WhiteSmoke" Target="{Binding ElementName=txtPass}">_Password:</Label>
+            <PasswordBox Foreground="WhiteSmoke" Background="DimGray" PasswordChar="*" Name="txtPass" Width="150" Margin="24,0"></PasswordBox>
         </WrapPanel>
         
     </Canvas>
