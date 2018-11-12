@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Login" Height="680" Width="320" Top="20" Left="500">
     <Canvas>
+        <WrapPanel Margin="20,100">
+            <Label Target="{Binding ElementName=txtUser}">_User:</Label>
+            <TextBox Name="txtUser" Width="150" Margin="50,0"></TextBox>
+            
+        </WrapPanel>
+        <WrapPanel Margin="20,150">
+            <Label Target="{Binding ElementName=txtPass}">_Password:</Label>
+            <TextBox Name="txtPass" Width="150" Margin="25,0"></TextBox>
+        </WrapPanel>
         
     </Canvas>
 </Window>
