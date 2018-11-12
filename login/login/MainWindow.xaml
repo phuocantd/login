@@ -14,7 +14,7 @@
         </WrapPanel>
         <WrapPanel Margin="20,150">
             <Label Target="{Binding ElementName=txtPass}">_Password:</Label>
-            <TextBox Name="txtPass" Width="150" Margin="25,0"></TextBox>
+            <PasswordBox PasswordChar="*" Name="txtPass" Width="150" Margin="25,0"></PasswordBox>
         </WrapPanel>
         
     </Canvas>
