@@ -18,15 +18,17 @@
             <Label MouseLeftButtonDown="lblMinimize_Click" Name="lblMinimize" Content="-" Foreground="White" Canvas.Left="265"/>
             <Label Name="lblTitle" Content="Login" Foreground="White"/>
         </Canvas>
-        <Canvas  Margin="0,20,0,0">
+        <Canvas Name="SignIn" Margin="0,20,0,0">
             <Label Content="Sign In" Foreground="#FF89F704"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="0" RenderTransformOrigin="0.517,0.123"/>
             <Label Content="📧 Email" Foreground="#FF15F1A1" FontSize="20"  Canvas.Left="40" Canvas.Top="75" />
             <TextBox Name="txtEmail" FontSize="17" Height="30" Width="230"  Foreground="#FFFFB400" Background="Transparent" Canvas.Left="40" Canvas.Top="120" />
             <Label Content="🔑 Password" Foreground="#FF15F1A1" FontSize="20"  Canvas.Left="40" Canvas.Top="165" />
             <PasswordBox Name="txtPass" PasswordChar="*" FontSize="20" Foreground="#FFFFB400" Background="Transparent" Canvas.Left="40" Canvas.Top="210" Height="30" Width="230"/>
-            <Button Click="btnLogin" Content="Login" FontSize="25" Width="150" Canvas.Left="80" Canvas.Top="255" Background="#FFACB40D" Foreground="PapayaWhip" BorderBrush="#FF2B21F7" />
-            <Label MouseDown="lblCreateAccount" Foreground="#FFC9B4B4" Content="Create an account" Canvas.Left="100" Canvas.Top="300"/>
+            <Button Click="btnLogin" Content="Login" FontSize="25" Width="150" Canvas.Left="80" Canvas.Top="270" Background="#FFACB40D" Foreground="PapayaWhip" BorderBrush="#FF2B21F7" />
+            <Label MouseDown="lblCreateAccount" Foreground="#FFC9B4B4" Content="Create an account" Canvas.Left="100" Canvas.Top="310"/>
         </Canvas>
-
+        <Canvas Name="SignUp" Margin="0,20,0,0">
+            
+        </Canvas>
     </Canvas>
 </Window>
