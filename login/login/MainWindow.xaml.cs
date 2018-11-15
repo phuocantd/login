@@ -43,5 +43,16 @@ namespace login
             this.WindowState = WindowState.Minimized;
         }
 
+        private void btnLogin(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Login");
+        }
+
+        private void lblCreateAccount(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Create an account");
+        }
+
+        
     }
 }
