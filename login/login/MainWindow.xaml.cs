@@ -24,5 +24,24 @@ namespace login
         {
             InitializeComponent();
         }
+
+        private void moveMouse(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void lblClose_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblMinimize_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
     }
 }

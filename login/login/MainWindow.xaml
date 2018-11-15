@@ -5,17 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:login"
         mc:Ignorable="d"
-        Title="Login" Height="680" Width="320" Top="20" Left="500">
-    <Canvas Background="DarkSlateGray">
-        <WrapPanel Margin="20,100">
-            <Label Foreground="WhiteSmoke" Target="{Binding ElementName=txtUser}">_User:</Label>
-            <TextBox Foreground="WhiteSmoke" Background="DimGray" Name="txtUser" Width="150" Margin="50,0"></TextBox>
-            
-        </WrapPanel>
-        <WrapPanel Margin="20,150">
-            <Label Foreground="WhiteSmoke" Target="{Binding ElementName=txtPass}">_Password:</Label>
-            <PasswordBox Foreground="WhiteSmoke" Background="DimGray" PasswordChar="*" Name="txtPass" Width="150" Margin="24,0"></PasswordBox>
-        </WrapPanel>
-        
+        Title="Login" Height="380" Width="300" Top="20" Left="500" AllowsTransparency="True" WindowStyle="None" Background="Transparent" ResizeMode="NoResize">
+    <Canvas MouseDown="moveMouse" Width="300" Margin="0,20,0,0">
+        <Canvas.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#CC0000FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Canvas Height="25" Width="300">
+            <Label MouseLeftButtonDown="lblClose_Click" Name="lblClose" Content="X" Foreground="White" Canvas.Left="280"/>
+            <Label MouseLeftButtonDown="lblMinimize_Click" Name="lblMinimize" Content="-" Foreground="White" Canvas.Left="265"/>
+            <Label Name="lblTitle" Content="Login" Foreground="White"/>
+        </Canvas>
+
+
     </Canvas>
 </Window>
