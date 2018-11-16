@@ -45,14 +45,22 @@ namespace login
 
         private void btnLogin(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Login");
+
         }
 
-        private void lblCreateAccount(object sender, MouseButtonEventArgs e)
+        private void lblSignIn(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Create an account");
+
         }
 
-        
+        private void lblSignUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRegister(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
