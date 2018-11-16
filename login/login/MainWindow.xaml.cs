@@ -96,7 +96,10 @@ namespace login
             {
                 if (txtPass_sIn.Password.ToString() == pass) 
                 {
-                    MessageBox.Show("Success");
+                    //MessageBox.Show("Success");
+                    dashboard dash = new dashboard();
+                    dash.Show();
+                    this.Close();
                 }
                 else
                 {

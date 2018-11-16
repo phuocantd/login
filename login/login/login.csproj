@@ -101,5 +101,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\phuocan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\sym.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\visualstudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\off.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

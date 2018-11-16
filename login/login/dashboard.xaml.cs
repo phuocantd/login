@@ -23,5 +23,25 @@ namespace login
         {
             InitializeComponent();
         }
+
+        private void moveDashboard(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void gotoLogin(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
+
+        private void turnOffDashBoard(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
