@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -43,24 +44,47 @@ namespace login
             this.WindowState = WindowState.Minimized;
         }
 
-        private void btnLogin(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void lblSignIn(object sender, MouseButtonEventArgs e)
         {
-
+            changeCanvas(SignIn, SignUp);
+            this.lblTitle.Content = "Register";
         }
 
         private void lblSignUp(object sender, MouseButtonEventArgs e)
         {
-
+            changeCanvas(SignUp, SignIn);
+            this.lblTitle.Content = "Login";
         }
 
-        private void btnRegister(object sender, RoutedEventArgs e)
-        {
+        
 
+        static void changeCanvas(Canvas cIn,Canvas cOut)
+        {
+            Canvas IN, OUT;
+            IN = cIn;
+            DoubleAnimation hidden = new DoubleAnimation();
+            hidden.From = 0;
+            hidden.To = -450;
+            hidden.Duration = TimeSpan.FromSeconds(0.75);
+            IN.BeginAnimation(Canvas.LeftProperty, hidden);
+
+            OUT = cOut;
+            DoubleAnimation show = new DoubleAnimation();
+            show.From = 450;
+            show.To = 0;
+            show.Duration = TimeSpan.FromSeconds(0.75);
+            OUT.BeginAnimation(Canvas.LeftProperty, show);
+            OUT.Visibility = Visibility.Visible;
+        }
+
+        private void lblLogin(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Login");
+        }
+
+        private void lblRegister(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Register");
         }
     }
 }
