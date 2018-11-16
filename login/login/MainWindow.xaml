@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:login"
         mc:Ignorable="d"
-        Title="Login" Height="380" Width="300" Top="20" Left="500" AllowsTransparency="True" WindowStyle="None" Background="Transparent" ResizeMode="NoResize">
+        Title="Login" Height="380" Width="300" Top="20" Left="500" AllowsTransparency="True" WindowStyle="None" Background="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Canvas MouseDown="moveMouse" Width="300" Margin="0,20,0,0">
         <Canvas.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,8 +14,8 @@
             </LinearGradientBrush>
         </Canvas.Background>
         <Canvas Height="20" Width="300">
-            <Label MouseLeftButtonDown="lblClose_Click" Name="lblClose" Content="X" Foreground="White" Canvas.Left="280"/>
-            <Label MouseLeftButtonDown="lblMinimize_Click" Name="lblMinimize" Content="-" Foreground="White" Canvas.Left="265"/>
+            <Label MouseLeftButtonDown="lblClose_Click" Name="lblClose" Content="❌" Foreground="White" Canvas.Left="275"/>
+            <Label MouseLeftButtonDown="lblMinimize_Click" Name="lblMinimize" Content="🗕" Foreground="White" Canvas.Left="255"/>
             <Label Name="lblTitle" Content="Login" Foreground="White"/>
         </Canvas>
 
@@ -30,7 +30,7 @@
                 <PasswordBox BorderThickness="0" Name="txtPass_sIn" PasswordChar="*" FontSize="20" Foreground="Black" Background="Transparent" Width="210" BorderBrush="Transparent" SelectionBrush="#00000000"/>
             </Border>
             <Border MouseDown="lblLogin" CornerRadius="15" BorderBrush="#ff4500" BorderThickness="20" Width="150" Height="55" Canvas.Left="70" Canvas.Top="249">
-                <Label Content="   Login" FontSize="25"  Background="#ff4500" Foreground="White" BorderBrush="#FFACB40D" Margin="0,-15" />
+                <Label Content="   Login" FontSize="25"  Background="#ff4500" Foreground="White" BorderBrush="#ff4500" Margin="0,-15" />
             </Border>
             <Label MouseDown="lblSignIn" Foreground="White" Content="Or, Create an free account" Canvas.Left="70" Canvas.Top="309"/>
         </Canvas>
@@ -49,8 +49,8 @@
             <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="201" Height="30" Width="230" Background="White">
                 <PasswordBox BorderThickness="0" Name="txtPass_sUp" PasswordChar="*" FontSize="20" Foreground="Black" Background="Transparent"  Height="30" Width="210"/>
             </Border>
-            <Border MouseDown="lblRegister" CornerRadius="15" BorderBrush="#FFACB40D" BorderThickness="20" Width="150" Height="55" Canvas.Left="70" Canvas.Top="250">
-                <Label  Content=" Register"  FontSize="25"  Background="#FFACB40D" Foreground="White" BorderBrush="#FFACB40D" Margin="0,-15" />
+            <Border MouseDown="lblRegister" CornerRadius="15" BorderBrush="#ff4500" BorderThickness="20" Width="150" Height="55" Canvas.Left="70" Canvas.Top="250">
+                <Label  Content=" Register"  FontSize="25"  Background="#ff4500" Foreground="White" BorderBrush="#ff4500" Margin="0,-15" />
             </Border>
             <Label MouseDown="lblSignUp" Foreground="White" Content="Or, I ready have an account ..." Canvas.Left="70" Canvas.Top="310"/>
         </Canvas>
