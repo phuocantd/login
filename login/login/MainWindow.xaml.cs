@@ -27,7 +27,7 @@ namespace login
         public MainWindow()
         {
             InitializeComponent();
-            acc.Add("phuocantd", "an123456");
+            acc.Add("admin", "123");
         }
 
         private void moveMouse(object sender, MouseButtonEventArgs e)
