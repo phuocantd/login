@@ -9,8 +9,8 @@
     <Canvas MouseDown="moveMouse" Width="300" Margin="0,20,0,0">
         <Canvas.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#CC0000FF" Offset="1"/>
+                <GradientStop Color="#FF000004" Offset="1"/>
+                <GradientStop Color="#E52525FF"/>
             </LinearGradientBrush>
         </Canvas.Background>
         <Canvas Height="20" Width="300">
@@ -18,26 +18,38 @@
             <Label MouseLeftButtonDown="lblMinimize_Click" Name="lblMinimize" Content="-" Foreground="White" Canvas.Left="265"/>
             <Label Name="lblTitle" Content="Login" Foreground="White"/>
         </Canvas>
+
         <Canvas Name="SignIn" Margin="0,20,0,0" Visibility="Visible">
-            <Label Content="Sign In" Foreground="Yellow"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="0" RenderTransformOrigin="0.517,0.123"/>
-            <Label Content="👤 _Account" Target="{Binding ElementName=txtAcount_sIn}" Foreground="Yellow" FontSize="20"  Canvas.Left="40" Canvas.Top="75"/>
-            <TextBox Name="txtAcount_sIn" FontSize="17" Height="30" Width="230"  Foreground="White" Background="Transparent" Canvas.Left="40" Canvas.Top="120" />
-            <Label Content="🔑 _Password" Target="{Binding ElementName=txtPass_sIn}" Foreground="Yellow" FontSize="20"  Canvas.Left="40" Canvas.Top="165" />
-            <PasswordBox Name="txtPass_sIn" PasswordChar="*" FontSize="20" Foreground="White" Background="Transparent" Canvas.Left="40" Canvas.Top="210" Height="30" Width="230"/>
-            <Border MouseDown="lblLogin" CornerRadius="15" BorderBrush="#ff4500" BorderThickness="20" Width="150" Height="55" Canvas.Left="80" Canvas.Top="254">
+            <Label Content="Sign In" Foreground="White"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="0" RenderTransformOrigin="0.517,0.123"/>
+            <Label Content="👤 _Account" Target="{Binding ElementName=txtAcount_sIn}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="62"/>
+            <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="104" Width="230" Background="White">
+                <TextBox BorderThickness="0" Name="txtAcount_sIn" FontSize="17" Height="30" Width="210" Foreground="Black" Background="Transparent" BorderBrush="Transparent" SelectionBrush="White" />
+            </Border>
+            <Label Content="🔑 _Password" Target="{Binding ElementName=txtPass_sIn}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="148" />
+            <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="190" Height="30" Width="230" Background="White">
+                <PasswordBox BorderThickness="0" Name="txtPass_sIn" PasswordChar="*" FontSize="20" Foreground="Black" Background="Transparent" Width="210" BorderBrush="Transparent" SelectionBrush="#00000000"/>
+            </Border>
+            <Border MouseDown="lblLogin" CornerRadius="15" BorderBrush="#ff4500" BorderThickness="20" Width="150" Height="55" Canvas.Left="70" Canvas.Top="249">
                 <Label Content="   Login" FontSize="25"  Background="#ff4500" Foreground="White" BorderBrush="#FFACB40D" Margin="0,-15" />
             </Border>
-            <Label MouseDown="lblSignIn" Foreground="White" Content="Or, Create an free account" Canvas.Left="80" Canvas.Top="309"/>
+            <Label MouseDown="lblSignIn" Foreground="White" Content="Or, Create an free account" Canvas.Left="70" Canvas.Top="309"/>
         </Canvas>
+
         <Canvas Name="SignUp" Margin="0,20,0,0" Visibility="Hidden">
-            <Label Content="Sign Up" Foreground="Yellow"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="0" RenderTransformOrigin="0.517,0.123"/>
-            <Label Content="👤 _Account" Target="{Binding ElementName=txtAccount_sUp}" Foreground="Yellow" FontSize="20"  Canvas.Left="40" Canvas.Top="48" />
-            <TextBox Name="txtAccount_sUp" FontSize="17" Height="30" Width="230"  Foreground="White" Background="Transparent" Canvas.Left="40" Canvas.Top="85" />
-            <Label Content="📧 _Email" Target="{Binding ElementName=txtEmail_sUp}" Foreground="Yellow" FontSize="20"  Canvas.Left="40" Canvas.Top="115" />
-            <TextBox Name="txtEmail_sUp" FontSize="17" Height="30" Width="230"  Foreground="White" Background="Transparent" Canvas.Left="40" Canvas.Top="152" />
-            <Label Content="🔑 _Password" Target="{Binding ElementName=txtPass_sUp}" Foreground="Yellow" FontSize="20"  Canvas.Left="40" Canvas.Top="182" />
-            <PasswordBox Name="txtPass_sUp" PasswordChar="*" FontSize="20" Foreground="White" Background="Transparent" Canvas.Left="40" Canvas.Top="219" Height="30" Width="230"/>
-            <Border MouseDown="lblRegister" CornerRadius="15" BorderBrush="#FFACB40D" BorderThickness="20" Width="150" Height="55" Canvas.Left="80" Canvas.Top="254">
+            <Label Content="Sign Up" Foreground="White"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="-17" RenderTransformOrigin="0.517,0.123"/>
+            <Label Content="👤 _Account" Target="{Binding ElementName=txtAccount_sUp}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="30" />
+            <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="67" Height="30" Width="230" Background="White">
+                <TextBox BorderThickness="0" Name="txtAccount_sUp" FontSize="17" Height="30" Width="210"  Foreground="Black" Background="Transparent"  />
+            </Border>
+            <Label Content="📧 _Email" Target="{Binding ElementName=txtEmail_sUp}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="97" />
+            <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="134" Height="30" Width="230" Background="White">
+                <TextBox BorderThickness="0" Name="txtEmail_sUp" FontSize="17" Height="30" Width="210"  Foreground="Black" Background="Transparent"  />
+            </Border>
+            <Label Content="🔑 _Password" Target="{Binding ElementName=txtPass_sUp}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="164" />
+            <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="201" Height="30" Width="230" Background="White">
+                <PasswordBox BorderThickness="0" Name="txtPass_sUp" PasswordChar="*" FontSize="20" Foreground="Black" Background="Transparent"  Height="30" Width="210"/>
+            </Border>
+            <Border MouseDown="lblRegister" CornerRadius="15" BorderBrush="#FFACB40D" BorderThickness="20" Width="150" Height="55" Canvas.Left="70" Canvas.Top="250">
                 <Label  Content=" Register"  FontSize="25"  Background="#FFACB40D" Foreground="White" BorderBrush="#FFACB40D" Margin="0,-15" />
             </Border>
             <Label MouseDown="lblSignUp" Foreground="White" Content="Or, I ready have an account ..." Canvas.Left="70" Canvas.Top="310"/>

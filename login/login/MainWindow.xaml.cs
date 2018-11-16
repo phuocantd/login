@@ -21,11 +21,13 @@ namespace login
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Dictionary<string, string> acc = new Dictionary<string, string>;
+        Dictionary<string, string> acc = new Dictionary<string, string>();
+        
 
         public MainWindow()
         {
             InitializeComponent();
+            acc.Add("phuocantd", "an123456");
         }
 
         private void moveMouse(object sender, MouseButtonEventArgs e)
@@ -58,9 +60,16 @@ namespace login
             this.lblTitle.Content = "Login";
         }
 
-        
+        private void setNIL()
+        {
+            this.txtAccount_sUp.Text = "";
+            this.txtAcount_sIn.Text = "";
+            this.txtEmail_sUp.Text = "";
+            this.txtPass_sIn.Password = "";
+            this.txtPass_sUp.Password = "";
+        }
 
-        static void changeCanvas(Canvas cIn,Canvas cOut)
+        private void changeCanvas(Canvas cIn,Canvas cOut)
         {
             Canvas IN, OUT;
             IN = cIn;
@@ -77,11 +86,29 @@ namespace login
             show.Duration = TimeSpan.FromSeconds(0.75);
             OUT.BeginAnimation(Canvas.LeftProperty, show);
             OUT.Visibility = Visibility.Visible;
+            setNIL();
         }
 
         private void lblLogin(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Login");
+            string pass = "";
+            if (acc.TryGetValue(txtAcount_sIn.Text, out pass))
+            {
+                if (txtPass_sIn.Password.ToString() == pass) 
+                {
+                    MessageBox.Show("Success");
+                }
+                else
+                {
+                    MessageBox.Show("Incorect");
+                }
+            }
+            else
+            {
+                MessageBox.Show("no account");
+            }
+
+
         }
 
         private void lblRegister(object sender, MouseButtonEventArgs e)
