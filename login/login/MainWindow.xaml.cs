@@ -21,6 +21,8 @@ namespace login
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Dictionary<string, string> acc = new Dictionary<string, string>;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -85,6 +87,15 @@ namespace login
         private void lblRegister(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Register");
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                txtAcount_sIn.Text = "You Entered: " + txtAcount_sIn.Text;
+                MessageBox.Show("hh");
+            }
         }
     }
 }
