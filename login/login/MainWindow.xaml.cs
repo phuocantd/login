@@ -161,7 +161,8 @@ namespace login
                 //MessageBox.Show("success");
                 if (isValidEmail(txtEmail_sUp.Text))
                 {
-                    MessageBox.Show("success");
+                    MessageBox.Show("successfful");
+                    
                 }
                 else
                 {
