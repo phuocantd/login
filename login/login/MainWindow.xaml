@@ -19,9 +19,9 @@
             <Label Name="lblTitle" Content="Login" Foreground="White"/>
         </Canvas>
 
-        <Canvas Name="SignIn" Margin="0,20,0,0" Visibility="Visible">
+        <Canvas Name="SignIn" Margin="0,20,0,0" Visibility="Hidden">
             <Label Content="Sign In" Foreground="White"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="0" RenderTransformOrigin="0.517,0.123"/>
-            <Label Content="👤 _Account" Target="{Binding ElementName=txtAcount_sIn}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="62"/>
+            <Label Content="👤 _Username" Target="{Binding ElementName=txtAcount_sIn}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="62"/>
             <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="104" Width="230" Background="White">
                 <TextBox BorderThickness="0" Name="txtAcount_sIn" FontSize="17" Height="30" Width="210" Foreground="Black" Background="Transparent" BorderBrush="Transparent" SelectionBrush="White" />
             </Border>
@@ -35,9 +35,9 @@
             <Label MouseDown="lblSignIn" Foreground="White" Content="Or, Create an free account" Canvas.Left="70" Canvas.Top="309"/>
         </Canvas>
 
-        <Canvas Name="SignUp" Margin="0,20,0,0" Visibility="Hidden">
+        <Canvas Name="SignUp" Margin="0,20,0,0" Visibility="Visible">
             <Label Content="Sign Up" Foreground="White"  FontSize="35" FontWeight="ExtraBold" Canvas.Left="80" Canvas.Top="-17" RenderTransformOrigin="0.517,0.123"/>
-            <Label Content="👤 _Account" Target="{Binding ElementName=txtAccount_sUp}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="30" />
+            <Label Content="👤 _Username" Target="{Binding ElementName=txtAccount_sUp}" Foreground="White" FontSize="20"  Canvas.Left="40" Canvas.Top="30" />
             <Border BorderThickness="0" CornerRadius="10"  Canvas.Left="30" Canvas.Top="67" Height="30" Width="230" Background="White">
                 <TextBox BorderThickness="0" Name="txtAccount_sUp" FontSize="17" Height="30" Width="210"  Foreground="Black" Background="Transparent"  />
             </Border>

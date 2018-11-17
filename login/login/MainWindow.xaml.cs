@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -96,7 +97,6 @@ namespace login
             {
                 if (txtPass_sIn.Password.ToString() == pass) 
                 {
-                    //MessageBox.Show("Success");
                     dashboard dash = new dashboard();
                     dash.Show();
                     this.Close();
@@ -114,9 +114,44 @@ namespace login
 
         }
 
+        private bool checkUsername(string st)
+        {
+            bool result = true;
+
+            string pass = "";
+            if (acc.TryGetValue(st, out pass))
+            {
+                result = false;
+                MessageBox.Show("Username is already taken");
+            }
+            else
+            {
+                if (Regex.IsMatch(st, @"^[a-zA-Z0-9_]+$"))
+                {
+
+                }
+                else
+                {
+                    result = false;
+                    MessageBox.Show("Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen");
+                }
+            }
+
+            return result;
+        }
+
         private void lblRegister(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Register");
+            //MessageBox.Show("Register");
+            if (checkUsername(txtAccount_sUp.Text))
+            {
+                //MessageBox.Show("success");
+            }
+            else
+            {
+                //MessageBox.Show("fail");
+            }
+
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
