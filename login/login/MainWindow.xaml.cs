@@ -153,6 +153,11 @@ namespace login
             }
         }
 
+        private bool isValidPassword(string st)
+        {
+            return true;
+        }
+
         private void lblRegister(object sender, MouseButtonEventArgs e)
         {
             //MessageBox.Show("Register");
