@@ -114,7 +114,7 @@ namespace login
 
         }
 
-        private bool checkUsername(string st)
+        private bool isValidkUsername(string st)
         {
             bool result = true;
 
@@ -140,12 +140,34 @@ namespace login
             return result;
         }
 
+        private bool isValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void lblRegister(object sender, MouseButtonEventArgs e)
         {
             //MessageBox.Show("Register");
-            if (checkUsername(txtAccount_sUp.Text))
+            if (isValidkUsername(txtAccount_sUp.Text))
             {
                 //MessageBox.Show("success");
+                if (isValidEmail(txtEmail_sUp.Text))
+                {
+                    MessageBox.Show("success");
+                }
+                else
+                {
+                    MessageBox.Show("fail");
+                }
+                
             }
             else
             {
