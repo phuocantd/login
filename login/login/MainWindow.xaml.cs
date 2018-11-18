@@ -22,13 +22,23 @@ namespace login
     /// </summary>
     public partial class MainWindow : Window
     {
-        Dictionary<string, string> acc = new Dictionary<string, string>();
+        struct mail
+        {
+            public string email;
+            public string pass;
+            public mail(string e, string p)
+            {
+                email = e;
+                pass = p;
+            }
+        }
+        Dictionary<string, mail> acc = new Dictionary<string, mail>();
         
 
         public MainWindow()
         {
             InitializeComponent();
-            acc.Add("admin", "123");
+            acc.Add("admin", new mail("admin@gmail.com","123"));
         }
 
         private void moveMouse(object sender, MouseButtonEventArgs e)
@@ -92,10 +102,10 @@ namespace login
 
         private void lblLogin(object sender, MouseButtonEventArgs e)
         {
-            string pass = "";
+            mail pass;
             if (acc.TryGetValue(txtAcount_sIn.Text, out pass))
             {
-                if (txtPass_sIn.Password.ToString() == pass) 
+                if (txtPass_sIn.Password.ToString() == pass.pass) 
                 {
                     dashboard dash = new dashboard();
                     dash.Show();
@@ -118,7 +128,7 @@ namespace login
         {
             bool result = true;
 
-            string pass = "";
+            mail pass;
             if (acc.TryGetValue(st, out pass))
             {
                 result = false;
