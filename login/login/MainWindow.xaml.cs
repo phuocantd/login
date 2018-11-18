@@ -165,7 +165,20 @@ namespace login
 
         private bool isValidPassword(string st)
         {
-            return true;
+            bool result = true;
+
+            //Make sure it's more than 15 characters, or at least 8 characters, including at least one digit, 
+            //at least one alphabetic character, no special characters
+            if (Regex.IsMatch("zxzxzxaS", @"(?!^[0-9]*$)(?!^[A-zA-Z]*$)^([a-zA-Z0-9]{8,})$"))
+            {
+
+            }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
 
         private void lblRegister(object sender, MouseButtonEventArgs e)
