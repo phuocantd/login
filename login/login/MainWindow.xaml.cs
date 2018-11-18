@@ -52,7 +52,17 @@ namespace login
             path = path + @"\config.ini";
             IniFile MyIni = new IniFile(path);
 
-            int sz = Int32.Parse(MyIni.Read("size"));
+            int sz;
+            try
+            {
+                sz = Int32.Parse(MyIni.Read("size"));
+            }
+            catch
+            {
+                sz = 0;
+                MyIni.Write("size", "0");
+            }
+
             string user, email, pass;
             for (int i = 0; i < sz; i++)
             {
@@ -75,7 +85,17 @@ namespace login
             path = path + @"\config.ini";
             IniFile MyIni = new IniFile(path);
 
-            int sz = Int32.Parse(MyIni.Read("size"));
+            int sz;
+            try
+            {
+                sz = Int32.Parse(MyIni.Read("size"));
+            }
+            catch
+            {
+                sz = 0;
+                MyIni.Write("size", "0");
+            }
+
             MyIni.Write($"{sz}", user, "username");
             MyIni.Write($"{sz}", email, "email");
             MyIni.Write($"{sz}", pass, "password");
