@@ -27,6 +27,9 @@ namespace login
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// cau truc cua 1 tai khoan mail
+        /// </summary>
         struct mail
         {
             public string email;
@@ -40,7 +43,9 @@ namespace login
         Dictionary<string, mail> acc = new Dictionary<string, mail>();
         
         
-
+        /// <summary>
+        /// doc du lieu tu file config.ini
+        /// </summary>
         private void loadData()
         {
             string path = Directory.GetCurrentDirectory();
@@ -58,6 +63,12 @@ namespace login
             }
         }
 
+        /// <summary>
+        /// luu du lieu vao file config.ini
+        /// </summary>
+        /// <param name="user">ten tai khoan</param>
+        /// <param name="email">ten email</param>
+        /// <param name="pass">mat khau</param>
         private void saveData(string user,string email,string pass)
         {
             string path = Directory.GetCurrentDirectory();
@@ -72,6 +83,9 @@ namespace login
             MyIni.Write("size", $"{sz}");
         }
 
+        /// <summary>
+        /// main
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -79,6 +93,11 @@ namespace login
             //acc.Add("admin", new mail("admin@gmail.com","123"));
         }
 
+        /// <summary>
+        /// di chuyen chuot
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void moveMouse(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
@@ -87,28 +106,51 @@ namespace login
             }
         }
 
+        /// <summary>
+        /// xu ly su kien tat chuong trinh
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblClose_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// ẩn chuong trinh
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblMinimize_Click(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
 
+        /// <summary>
+        /// đổi màn hình sign in sang sign up
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblSignIn(object sender, MouseButtonEventArgs e)
         {
             changeCanvas(SignIn, SignUp);
             this.lblTitle.Content = "Register";
         }
 
+        /// <summary>
+        /// đổi màn hình sign up sang sign in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblSignUp(object sender, MouseButtonEventArgs e)
         {
             changeCanvas(SignUp, SignIn);
             this.lblTitle.Content = "Login";
         }
 
+        /// <summary>
+        /// đặt tất cả text box lại bằng rỗng
+        /// </summary>
         private void setNIL()
         {
             this.txtAccount_sUp.Text = "";
@@ -118,6 +160,11 @@ namespace login
             this.txtPass_sUp.Password = "";
         }
 
+        /// <summary>
+        /// thay đổi 2 canvas hiển thị ra màn hình
+        /// </summary>
+        /// <param name="cIn">canvas sẽ ẩn</param>
+        /// <param name="cOut">canvas sẽ hiện</param>
         private void changeCanvas(Canvas cIn,Canvas cOut)
         {
             Canvas IN, OUT;
@@ -138,6 +185,11 @@ namespace login
             setNIL();
         }
 
+        /// <summary>
+        /// kiểm tra account nếu thành công sẽ mở dashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblLogin(object sender, MouseButtonEventArgs e)
         {
             mail pass;
@@ -162,6 +214,11 @@ namespace login
 
         }
 
+        /// <summary>
+        /// kiểm tra user hợp lệ
+        /// </summary>
+        /// <param name="st">tên user</param>
+        /// <returns></returns>
         private bool isValidkUsername(string st)
         {
             bool result = true;
@@ -188,6 +245,11 @@ namespace login
             return result;
         }
 
+        /// <summary>
+        /// kiểm tra email hợp lệ
+        /// </summary>
+        /// <param name="email">tên email</param>
+        /// <returns></returns>
         private bool isValidEmail(string email)
         {
             bool result = true;
@@ -212,6 +274,11 @@ namespace login
             return result;
         }
 
+        /// <summary>
+        /// kiểm tra password hợp lệ
+        /// </summary>
+        /// <param name="st">chuỗi password</param>
+        /// <returns></returns>
         private bool isValidPassword(string st)
         {
             bool result = true;
@@ -230,6 +297,11 @@ namespace login
             return result;
         }
 
+        /// <summary>
+        /// kiểm tra đăng kí tài khoản nếu thành công sẽ mở dashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblRegister(object sender, MouseButtonEventArgs e)
         {
             //MessageBox.Show("Register");
@@ -266,19 +338,16 @@ namespace login
 
         }
 
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Return)
-            {
-                txtAcount_sIn.Text = "You Entered: " + txtAcount_sIn.Text;
-                MessageBox.Show("hh");
-            }
-        }
+        
     }
 }
 
+
 namespace MyProg
 {
+    /// <summary>
+    /// lớp xử lý file ini
+    /// </summary>
     class IniFile   // revision 11
     {
         string Path;

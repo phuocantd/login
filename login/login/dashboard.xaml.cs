@@ -24,6 +24,11 @@ namespace login
             InitializeComponent();
         }
 
+        /// <summary>
+        /// di chuyển màn hình
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void moveDashboard(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
@@ -32,6 +37,11 @@ namespace login
             }
         }
 
+        /// <summary>
+        /// quay trở lại giao diện sign in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gotoLogin(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
@@ -39,6 +49,11 @@ namespace login
             this.Close();
         }
 
+        /// <summary>
+        /// tắt dashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void turnOffDashBoard(object sender, MouseButtonEventArgs e)
         {
             this.Close();
