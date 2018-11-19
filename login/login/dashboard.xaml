@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Dashboard" Height="620" Background="Transparent" AllowsTransparency="True" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Grid Margin="0,20,0,0" Background="#00000000">
-        <Grid HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="200" Background="DarkBlue">
+        <Grid HorizontalAlignment="Right" Height="600" VerticalAlignment="Top" Width="200" Background="DarkBlue" Margin="0,0,800,0">
             <Rectangle RadiusX="200" RadiusY="200" Height="200" Width="200" Margin="0,0,0,400">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="icons/phuocan.jpg"></ImageBrush>
@@ -24,11 +24,14 @@
             <Image HorizontalAlignment="Left" Height="50" Margin="750,0,0,0" VerticalAlignment="Top" Width="50" Source="icons/off.png" MouseLeftButtonDown="turnOffDashBoard"/>
         </Grid>
         <Canvas HorizontalAlignment="Left" Height="550" Margin="200,50,0,0" VerticalAlignment="Top" Width="800" Background="White">
-            <Canvas Height="200" Width="800" Background="#FF00E8FF">
-                <Image Height="200" Canvas.Left="525" Width="265" Source="icons/visualstudio.png"/>
+            <Canvas Height="150" Width="800" Background="#FF00E8FF">
+                <TextBlock Canvas.Left="136" TextWrapping="Wrap" Text="WPF App" Canvas.Top="25" FontSize="100" FontFamily="Colonna MT" FontWeight="Bold"/>
+                <Image Height="205" Canvas.Left="525" Width="265" Source="icons/visualstudio.png" Canvas.Top="-20"/>
             </Canvas>
-            <Canvas Height="350" Canvas.Top="200" Width="800" Background="#FF5D62C5"/>
-            <TextBlock Canvas.Left="141" TextWrapping="Wrap" Text="WPF App" Canvas.Top="45" FontSize="100" FontFamily="Colonna MT" FontWeight="Bold"/>
+            <Canvas Height="400" Canvas.Top="150" Width="800" Background="White">
+
+            </Canvas>
+
 
 
 
