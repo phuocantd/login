@@ -21,21 +21,9 @@ namespace login
     /// </summary>
     public partial class dashboard : Window
     {
-        struct item
-        {
-            public string image;
-            public string salary;
-            public string name;
-            public item(string i, string s, string n)
-            {
-                image = i;
-                salary = s;
-                name = n;
-            }
-
-        }
 
         List<item> arr = new List<item>();
+        List<Canvas> canvas = new List<Canvas>();
 
         private void loadData()
         {
@@ -59,7 +47,7 @@ namespace login
                 url = MyIni.Read($"{i}", "urlItem");
                 name = MyIni.Read($"{i}", "nameItem");
                 salary = MyIni.Read($"{i}", "salaryItem");
-                arr.Add(new item(url, salary, name));
+                arr.Add(new item { nameItem = name, imgItem = url, salaryItem=salary });
             }
         }
 
@@ -83,13 +71,13 @@ namespace login
                 Image img = new Image();
                 img.Height = 294;
                 img.Width = 294;
-                img.Source = new BitmapImage(new Uri($"/cell phone/{temp.image}", UriKind.RelativeOrAbsolute));
+                img.Source = new BitmapImage(new Uri($"/cell phone/{temp.imgItem}", UriKind.RelativeOrAbsolute));
                 display.Children.Add(img);
 
                 //create textblock name cell phone
                 TextBlock txtName = new TextBlock();
                 txtName.Width = 290;
-                txtName.Text = temp.name;
+                txtName.Text = temp.nameItem;
                 Canvas.SetTop(txtName, 300);
                 txtName.TextAlignment = TextAlignment.Center;
                 txtName.FontSize = 25;
@@ -102,7 +90,7 @@ namespace login
                 Color color = (Color)ColorConverter.ConvertFromString("#ccc");
                 txtSalary.Foreground = new System.Windows.Media.SolidColorBrush(color);
                 txtSalary.Width = 250;
-                txtSalary.Text = temp.salary;
+                txtSalary.Text = temp.salaryItem;
                 txtSalary.FontSize = 20;
                 Canvas.SetTop(txtSalary, 10);
                 txtSalary.TextAlignment = TextAlignment.Right;
@@ -147,5 +135,27 @@ namespace login
         {
             this.Close();
         }
+    }
+}
+
+public class item
+{
+    private string img;
+    private string name;
+    private string salary;
+    public string imgItem
+    {
+        get { return img; }
+        set { img = value; }
+    }
+    public string nameItem
+    {
+        get { return name; }
+        set { name = value; }
+    }
+    public string salaryItem
+    {
+        get { return salary; }
+        set { salary = value; }
     }
 }
