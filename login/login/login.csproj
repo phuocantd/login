@@ -122,5 +122,8 @@
   <ItemGroup>
     <Resource Include="icons\off.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cell phone\oppo-a7.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

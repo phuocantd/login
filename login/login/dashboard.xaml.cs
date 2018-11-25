@@ -19,9 +19,29 @@ namespace login
     /// </summary>
     public partial class dashboard : Window
     {
+        struct item
+        {
+            public string image;
+            public string salary;
+            public string name;
+            public item(string i, string s, string n)
+            {
+                image = i;
+                salary = s;
+                name = n;
+            }
+
+        }
+
+        item[] arr = new item[14];
+
         public dashboard()
         {
             InitializeComponent();
+
+            
+
+
         }
 
         /// <summary>
