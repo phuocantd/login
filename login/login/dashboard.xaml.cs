@@ -39,7 +39,42 @@ namespace login
         {
             InitializeComponent();
 
-            
+            for (int i = 0; i < 14; i++)
+            {
+                Canvas display = new Canvas();
+                display.Height = 350;
+
+                //create image cell phone
+                Image img = new Image();
+                img.Height = 294;
+                img.Width = 294;
+                img.Source = new BitmapImage(new Uri(@"/cell phone/oppo-a7.jpg", UriKind.RelativeOrAbsolute));
+                display.Children.Add(img);
+
+                //create textblock name cell phone
+                TextBlock txtName = new TextBlock();
+                txtName.Width = 290;
+                txtName.FontSize = 12;
+                txtName.Text = "OPPO A7";
+                Canvas.SetTop(txtName, 300);
+                txtName.TextAlignment = TextAlignment.Center;
+                txtName.FontSize = 30;
+                txtName.FontFamily = new FontFamily("Axure Handwriting");
+                txtName.FontWeight = FontWeights.Bold;
+                display.Children.Add(txtName);
+
+                //create textblock salary cell phone
+                TextBlock txtSalary = new TextBlock();
+                txtSalary.Width = 294;
+                txtSalary.Text = "5.990.000đ";
+                txtSalary.FontSize = 20;
+                Canvas.SetTop(txtSalary, 10);
+                txtSalary.TextAlignment = TextAlignment.Right;
+                txtSalary.FontWeight = FontWeights.Bold;
+                display.Children.Add(txtSalary);
+
+                UFG.Children.Add(display);
+            }
 
 
         }

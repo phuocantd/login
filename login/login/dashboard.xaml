@@ -5,43 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:login"
         mc:Ignorable="d"
-        Title="Dashboard" Height="620" Background="Transparent" AllowsTransparency="True" Width="1100" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
-    <Grid Margin="0,20,0,0" Background="#00000000">
-        <StackPanel Orientation="Horizontal">
-            <Grid Width="200" Background="DarkBlue">
-                <Rectangle RadiusX="200" RadiusY="200" Height="200" Width="200" Margin="0,0,0,400">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="icons/phuocan.jpg"></ImageBrush>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Button Content="Home " Margin="0,275,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="{x:Null}" FontSize="36" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Left"/>
+        Title="Dashboard" Height="622" Background="Black" AllowsTransparency="True" Width="1104" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid Margin="2,20,0,2" Background="#00000000">
+            <StackPanel Orientation="Horizontal">
+                <Grid Width="200" Background="#333">
+                    <Rectangle RadiusX="200" RadiusY="200" Height="200" Width="200" Margin="0,0,0,400">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="icons/phuocan.jpg"></ImageBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Content="Home " Margin="0,275,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="{x:Null}" FontSize="36" Foreground="#ccc" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Left"/>
 
-                <TextBlock HorizontalAlignment="Left" Margin="0,219,0,0" TextWrapping="Wrap" Text="An Nguyen Phuoc" VerticalAlignment="Top" Foreground="White" FontSize="28" FontFamily="Monotype Corsiva" Width="200"/>
-                <Button Content="Logout" Margin="0,529,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="{x:Null}" FontSize="36" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Click="gotoLogin"/>
-                <Image HorizontalAlignment="Left" Height="50" Margin="10,529,0,0" VerticalAlignment="Top" Width="50" Source="icons/logout.png"/>
-                <Image HorizontalAlignment="Left" Height="50" Margin="10,275,0,0" VerticalAlignment="Top" Width="50" Source="icons/home.png"  />
-            </Grid>
-            <StackPanel >
-                <Canvas Height="50" Width="900" Background="DarkBlue" MouseLeftButtonDown="moveDashboard">
-                    <Image HorizontalAlignment="Left" Height="50" Canvas.Left="840" Width="50" Source="icons/off.png" MouseLeftButtonDown="turnOffDashBoard"/>
-                </Canvas>
-                <Canvas Height="150" Background="#FF00E8FF">
-                    <TextBlock Canvas.Left="136" TextWrapping="Wrap" Text="Smart Phone" Canvas.Top="25" FontSize="100" FontFamily="Colonna MT" FontWeight="Bold"/>
-                </Canvas>
-                <Grid Height="400" Background="White">
-                    <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Auto">
-                        <UniformGrid Columns="3">
-                            <Canvas Height="350">
-                                
-                            </Canvas>
-                            <Canvas Background="Green"></Canvas>
-                            <Canvas Background="Blue"></Canvas>
-                            <Canvas Background="Green" ></Canvas>
-                            <Canvas Background="Blue"></Canvas>
-                        </UniformGrid>
-                    </ScrollViewer>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,219,0,0" TextWrapping="Wrap" Text="An Nguyen Phuoc" VerticalAlignment="Top" Foreground="#ccc" FontSize="28" FontFamily="Monotype Corsiva" Width="200"/>
+                    <Button Content="Logout" Margin="0,529,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="{x:Null}" FontSize="36" Foreground="#ccc" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Click="gotoLogin"/>
+                    <Image HorizontalAlignment="Left" Height="50" Margin="10,529,0,0" VerticalAlignment="Top" Width="50" Source="icons/logout.png"/>
+                    <Image HorizontalAlignment="Left" Height="50" Margin="10,275,0,0" VerticalAlignment="Top" Width="50" Source="icons/home.png"  />
                 </Grid>
+                <StackPanel >
+                    <Canvas Height="100" Width="900" Background="#ccc" MouseLeftButtonDown="moveDashboard">
+                        <Image HorizontalAlignment="Left" Height="50" Canvas.Left="840" Width="50" Source="icons/off.png" MouseLeftButtonDown="turnOffDashBoard" Canvas.Top="25"/>
+                        <TextBlock Canvas.Left="30" TextWrapping="Wrap" Text="Smart Phone" Foreground="#333" FontSize="100" FontFamily="Colonna MT" FontWeight="Bold"/>
+                    </Canvas>
+                    <Grid Height="500" Background="#ccc">
+                        <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Auto">
+    
+                            <UniformGrid Columns="3" Name="UFG">
+    
+                            </UniformGrid>
+                        </ScrollViewer>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>
