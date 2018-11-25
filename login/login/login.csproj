@@ -125,5 +125,28 @@
   <ItemGroup>
     <Resource Include="cell phone\oppo-a7.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cell phone\samsung-galaxy-s9-plus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cell phone\vivo-v11i.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cell phone\huawei-y9-2019.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cell phone\iphone-x-256gb-silver.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cell phone\coolpad-n3d.jpg" />
+    <Resource Include="cell phone\itel-it2123.jpg" />
+    <Resource Include="cell phone\itel-p51.jpg" />
+    <Resource Include="cell phone\mobell-nova-p3.jpg" />
+    <Resource Include="cell phone\mobiistar-x.jpg" />
+    <Resource Include="cell phone\nokia-61-plus.jpg" />
+    <Resource Include="cell phone\philips-s329.jpg" />
+    <Resource Include="cell phone\realme-2-pro-6gb-64gb.jpg" />
+    <Resource Include="cell phone\xiaomi-mi-8-lite.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

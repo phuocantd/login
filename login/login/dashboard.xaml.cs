@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MyProg;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,13 +35,46 @@ namespace login
 
         }
 
-        item[] arr = new item[14];
+        List<item> arr = new List<item>();
+
+        private void loadData()
+        {
+            string path = Directory.GetCurrentDirectory();
+            path = path + @"\config.ini";
+            IniFile MyIni = new IniFile(path);
+            int sz;
+            try
+            {
+                sz = Int32.Parse(MyIni.Read("szItem"));
+            }
+            catch
+            {
+                sz = 0;
+                MyIni.Write("size", "0");
+            }
+
+            string url, name, salary;
+            for (int i = 0; i < sz; i++)
+            {
+                url = MyIni.Read($"{i}", "urlItem");
+                name = MyIni.Read($"{i}", "nameItem");
+                salary = MyIni.Read($"{i}", "salaryItem");
+                arr.Add(new item(url, salary, name));
+            }
+        }
 
         public dashboard()
         {
             InitializeComponent();
+            loadData();
+            displayItem();
 
-            for (int i = 0; i < 14; i++)
+
+        }
+
+        private void displayItem()
+        {
+            foreach (var temp in arr)
             {
                 Canvas display = new Canvas();
                 display.Height = 350;
@@ -48,25 +83,26 @@ namespace login
                 Image img = new Image();
                 img.Height = 294;
                 img.Width = 294;
-                img.Source = new BitmapImage(new Uri(@"/cell phone/oppo-a7.jpg", UriKind.RelativeOrAbsolute));
+                img.Source = new BitmapImage(new Uri($"/cell phone/{temp.image}", UriKind.RelativeOrAbsolute));
                 display.Children.Add(img);
 
                 //create textblock name cell phone
                 TextBlock txtName = new TextBlock();
                 txtName.Width = 290;
-                txtName.FontSize = 12;
-                txtName.Text = "OPPO A7";
+                txtName.Text = temp.name;
                 Canvas.SetTop(txtName, 300);
                 txtName.TextAlignment = TextAlignment.Center;
-                txtName.FontSize = 30;
+                txtName.FontSize = 25;
                 txtName.FontFamily = new FontFamily("Axure Handwriting");
                 txtName.FontWeight = FontWeights.Bold;
                 display.Children.Add(txtName);
 
                 //create textblock salary cell phone
                 TextBlock txtSalary = new TextBlock();
-                txtSalary.Width = 294;
-                txtSalary.Text = "5.990.000đ";
+                Color color = (Color)ColorConverter.ConvertFromString("#ccc");
+                txtSalary.Foreground = new System.Windows.Media.SolidColorBrush(color);
+                txtSalary.Width = 250;
+                txtSalary.Text = temp.salary;
                 txtSalary.FontSize = 20;
                 Canvas.SetTop(txtSalary, 10);
                 txtSalary.TextAlignment = TextAlignment.Right;
@@ -75,8 +111,6 @@ namespace login
 
                 UFG.Children.Add(display);
             }
-
-
         }
 
         /// <summary>

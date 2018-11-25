@@ -17,7 +17,7 @@
                     </Rectangle>
                     <Button Content="Home " Margin="0,275,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="{x:Null}" FontSize="36" Foreground="#ccc" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Left"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="0,219,0,0" TextWrapping="Wrap" Text="An Nguyen Phuoc" VerticalAlignment="Top" Foreground="#ccc" FontSize="28" FontFamily="Monotype Corsiva" Width="200"/>
+                    <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="0,219,0,0" TextWrapping="Wrap" Text="An Nguyen Phuoc" VerticalAlignment="Top" Foreground="#ccc" FontSize="28" FontFamily="Monotype Corsiva" Width="200"/>
                     <Button Content="Logout" Margin="0,529,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="{x:Null}" FontSize="36" Foreground="#ccc" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Click="gotoLogin"/>
                     <Image HorizontalAlignment="Left" Height="50" Margin="10,529,0,0" VerticalAlignment="Top" Width="50" Source="icons/logout.png"/>
                     <Image HorizontalAlignment="Left" Height="50" Margin="10,275,0,0" VerticalAlignment="Top" Width="50" Source="icons/home.png"  />
@@ -28,8 +28,7 @@
                         <TextBlock Canvas.Left="30" TextWrapping="Wrap" Text="Smart Phone" Foreground="#333" FontSize="100" FontFamily="Colonna MT" FontWeight="Bold"/>
                     </Canvas>
                     <Grid Height="500" Background="#ccc">
-                        <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Auto">
-    
+                        <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                             <UniformGrid Columns="3" Name="UFG">
     
                             </UniformGrid>
